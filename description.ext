@@ -1,0 +1,46 @@
+#include "ZP\infiSTAR_AdminMenu.hpp"
+
+//////////////////////////////You can edit///////////////////////////
+
+author = "R00x";
+onLoadName = "Operation Name";
+
+skipLobby = 1;
+
+//Also edit ZP\Config\Config.h
+//Make sure to add a marker somewhere called "ZPRespawn"
+
+//////////////////////////////Dont touch////////////////////////
+
+respawnOnStart = -1;
+disabledAI = 1;
+respawnDialog = 1;
+respawnButton = 0;
+
+respawn = 3; // Players respawn at base
+respawnDelay = 120; // Players spectate for 3 minutes between respawns
+respawnTemplates[] = {"ace_spectator","Counter","Tickets","Wave"}; // Wave respawns and a countdown for west side
+
+
+#include "ZP\UI\ZP_DialogsMaster.h"
+
+class CfgClient
+{
+    #include "ZP\Config\ZP_Config.h"
+};
+
+class CfgFunctions 
+{
+	#include "ZP\Functions\ZP_Functions.h"
+	class ZPLoad
+	{
+		class ZPFunctions
+		{
+			class myInit
+			{
+			file = "ZP\addons.sqf";
+			preInit = 1;
+			};
+		};
+	};
+};
